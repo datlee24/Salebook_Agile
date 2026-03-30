@@ -41,3 +41,36 @@ function deleteFile($file){
         unlink($pathDelete); // Hàm unlink dùng để xóa file
     }
 }
+
+// Hàm hỗ trợ hiển thị header, footer, sidebar cho trang người dùng và quản trị
+function headerClient(){
+    include_once PATH_CLIENT . 'layout/header.php';
+}
+
+function footerClient(){
+    include_once PATH_CLIENT . 'layout/footer.php';
+}
+
+function sidebarClient(){
+    include_once PATH_CLIENT . 'layout/sidebar.php';
+}
+
+function headerAdmin(){
+    include_once PATH_ADMIN . 'layout/header.php';
+}
+
+function footerAdmin(){
+    include_once PATH_ADMIN . 'layout/footer.php';
+}
+
+// Kiểm tra xem người dùng có phải là quản trị viên không
+function checkIsAdmin() {
+    // Ưu tiên kiểm tra session admin
+    if (isset($_SESSION['admin']) && $_SESSION['admin']['role'] === 'admin') {
+        return true;
+    } elseif (!isset($_SESSION['user']) || !isset($_SESSION['admin']) || $_SESSION['user']['role'] === 'user') {
+        // Nếu không phải admin, chuyển hướng về trang đăng nhập
+        header('Location: admin.php?act=login');
+        exit;
+    }
+}
