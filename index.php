@@ -28,8 +28,25 @@ $categories = $categoryModel->getAll();
 // Route
 $act = $_GET['act'] ?? '/';
 
+// Điều hướng (trang người dùng)
+// Các controller nằm trong thư mục controllers/client
 match ($act) {
-    // Trang chủ
-    '/'=>(new ProductController())->Home(),
+    // Trang chủ: Hiển thị danh sách sản phẩm
+    '/' => (new ProductController())->showAll(),
+    // Chi tiết sản phẩm
+    'product_detail' => (new ProductController())->detail(),
+
+    // // Gửi bình luận
+    // 'send_comment' => (new ProductController())->sendComment(),
+
+    // 'login' => (new AuthController())->login(),
+    // 'logout' => (new AuthController())->logout(),
+    // 'register' => (new AuthController())->register(),
+
+    // // Danh sách sản phẩm theo danh mục
+    // 'product_by_category' => (new ProductController())->byCategory(),
+
+    // // Mặc định: Chuyển về trang chủ nếu action không hợp lệ
+    // default => (new ProductController())->showAll(),
 
 };
