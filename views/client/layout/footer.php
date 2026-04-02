@@ -3,7 +3,7 @@
 ?>
 <footer class="panel panel-default">
     <div class="panel-heading text-center">
-        <p>CodeGym &copy; 2017</p>
+        <p> &copy; 2017</p>
     </div>
 </footer>
 <style>

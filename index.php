@@ -39,9 +39,9 @@ match ($act) {
     // // Gửi bình luận
     // 'send_comment' => (new ProductController())->sendComment(),
 
-    // 'login' => (new AuthController())->login(),
-    // 'logout' => (new AuthController())->logout(),
-    // 'register' => (new AuthController())->register(),
+    'login' => (new AuthController())->login(),
+    'logout' => (new AuthController())->logout(),
+    'register' => (new AuthController())->register(),
 
     // // Danh sách sản phẩm theo danh mục
     // 'product_by_category' => (new ProductController())->byCategory(),

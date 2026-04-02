@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #f5f5f5;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.shopping-mall h1 {
+    font-size: 28px;
+    color: #003366;
+}
+
+.shopping-mall h5 {
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Đảm bảo sản phẩm đồng đều và thẳng hàng */
+.poly-prod {
+    margin-bottom: 20px; /* Khoảng cách dưới bằng nhau */
+    height: 400px; /* Chiều cao cố định */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.poly-prod .panel {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.poly-prod .panel-body {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.poly-prod .panel-body img {
+    max-width: 100%;
+    max-height: 200px; /* Chiều cao hình ảnh cố định */
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.poly-prod .panel-heading,
+.poly-prod .panel-footer {
+    padding: 10px;
+    text-align: center;
+}
+
+.poly-prod .panel-heading a {
+    color: #333;
+    text-decoration: none;
+}
+
+.poly-prod .panel-heading a:hover {
+    color: #007bff;
+}
+
+.poly-prod .panel-footer {
+    background-color: #f8f9fa;
+    font-weight: bold;
+}
+
+/* Slider */
+.slider {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.slides img {
+    width: 100%;
+    height: 300px;
+    display: none;
+    object-fit: cover;
+}
+
+.slides img.active {
+    display: block;
+}
+
+.slider .prev,
+.slider .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    background-color: rgba(0,0,0,0.3);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.slider .prev { left: 10px; }
+.slider .next { right: 10px; }
+
+/* Đảm bảo grid thẳng hàng */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-sm-4 {
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+/* Sidebar */
+.panel-default {
+    margin-bottom: 20px;
+}
+
+.panel-body form {
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-body input[type="text"] {
+    margin-bottom: 10px;
+}
